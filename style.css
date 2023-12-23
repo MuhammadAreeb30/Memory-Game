@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    height: 100vh;
+    background-color: #2d3436;
+}
+
+#card_section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+    color: white;
+    font-weight: 600;
+}
+
+span{
+    color: #fff200;
+}
+
+/* .card {
+    width: 10rem;
+    height: 10rem;
+    display: grid;
+    place-items: center;
+    border-radius: .6rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: yellow;
+    color: black;
+    /* padding: 2rem; */
+/* box-shadow: 0px 4px 24px rgba(209, 209, 209, 0.884);
+    cursor: pointer;
+    user-select: none;
+}
+
+.card-selected{
+    border: .5rem solid white;
+}
+
+.card_match{
+    border: .5rem solid purple;
+} */
+
+.card {
+    position: relative;
+    transition: all 0.4s linear;
+    transform-style: preserve-3d;
+    background-color: #fff200;
+    cursor: pointer;
+    border-radius: .6rem;
+    user-select: none;
+}
+
+.card,
+.front-card,
+.back-card {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.front-card,
+.back-card {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front-card{
+    background: #fff200;
+    background-size: contain;
+    border-radius: .6rem;
+    padding: 2rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.back-card{
+    transform: rotateY(180deg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: .6rem;
+    padding: 2rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.card-selected{
+    transform: rotateY(180deg);   
+}
+
+.card_match .front-card{
+    background-color: #1e272e;
+}
+
+@media (max-width: 798px) {
+    #card_section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
